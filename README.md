@@ -1,8 +1,8 @@
-# How To Make REST API Calls With cURL
+# cURLでREST APIコールを行う方法
 
-[![Promo](https://github.com/luminati-io/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.com/) 
+[![Promo](https://github.com/luminati-io/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.jp/) 
 
-This guide explains how to use cURL for REST API requests like GET, POST, PUT, and DELETE, and enhance efficiency with Web Unlocker proxies.
+このガイドでは、cURLを使用してGET、POST、PUT、DELETEなどのREST APIリクエストを行う方法と、Web Unlockerプロキシを活用して効率を高める方法を解説します。
 
 - [cURL Installation](#curl-installation)
 - [How to Use cURL](#how-to-use-curl)
@@ -16,25 +16,25 @@ This guide explains how to use cURL for REST API requests like GET, POST, PUT, a
 
 ## cURL Installation
 
-cURL comes preinstalled on most major operating systems today, including Linux, macOS, and Windows You can check your install of cURL with the following command.
+cURLは現在、Linux、macOS、Windowsを含む主要なオペレーティングシステムのほとんどにプリインストールされています。次のコマンドでcURLのインストール状況を確認できます。
 
 ```bash
 curl --version
 ```
 
-If cURL is properly installed, this will display information about the version and build of cURL. If you don’t have cURL installed, you can find a version matching your OS on the downloads page [here](https://curl.se/download.html).
+cURLが正しくインストールされている場合、cURLのバージョンやビルドに関する情報が表示されます。cURLがインストールされていない場合は、ダウンロードページの[こちら](https://curl.se/download.html)で、お使いのOSに合致するバージョンを見つけられます。
 
 ## How to Use cURL
 
 ### Making a GET Request
 
-`GET` is the most common HTTP request used by web browsers every time they are fetching a page. With cURL, we use the `GET` flag to perform one. The example below sends a `GET` to `https://jsonplaceholder.typicode.com/posts`.
+`GET` は、Webブラウザがページを取得するたびに使用する最も一般的なHTTPリクエストです。cURLでは、`GET` フラグを使用してこれを実行します。以下の例では、`https://jsonplaceholder.typicode.com/posts` に `GET` を送信します。
 
 ```bash
 curl -X GET https://jsonplaceholder.typicode.com/posts
 ```
 
-This is a snippet of the response to the above request:
+以下は、上記リクエストに対するレスポンスの一部です。
 
 ```json
 {
@@ -72,7 +72,7 @@ This is a snippet of the response to the above request:
 
 ### Making a POST Request
 
-The `POST` request sends information to a server to be saved in a database. The example below sends a `POST` to create a new post using the API.
+`POST` リクエストは、サーバーに情報を送信してデータベースに保存します。以下の例では、APIを使用して新しい投稿を作成するために `POST` を送信します。
 
 ```bash
 curl -X POST https://jsonplaceholder.typicode.com/posts \
@@ -85,7 +85,7 @@ curl -X POST https://jsonplaceholder.typicode.com/posts \
 
 ```
 
-The response to the request contains the actual post object:
+リクエストに対するレスポンスには、実際の投稿オブジェクトが含まれます。
 
 ```json
 {
@@ -98,7 +98,7 @@ The response to the request contains the actual post object:
 
 ### Making a PUT Request
 
-To edit an object that already exists in a database, use a `PUT` request. The example below updates our previous post body from `bar` to `updated bar`.
+データベースにすでに存在するオブジェクトを編集するには、`PUT` リクエストを使用します。以下の例では、先ほどの投稿本文を `bar` から `updated bar` に更新します。
 
 ```bash
 curl -X PUT https://jsonplaceholder.typicode.com/posts/1 \
@@ -112,7 +112,7 @@ curl -X PUT https://jsonplaceholder.typicode.com/posts/1 \
 
 ```
 
-cURL will print the updated body of the post after sending the above reqest:
+cURLは、上記リクエストを送信した後、投稿の更新後本文を出力します。
 
 ```json
 {
@@ -125,12 +125,12 @@ cURL will print the updated body of the post after sending the above reqest:
 
 ### Making a DELETE Request
 
-The `DELETE` request is used to remove an existing object from a database using a unique identifier which in out case is `1`. Here is the command that performs that request:
+`DELETE` リクエストは、一意の識別子（この場合は `1`）を使って、データベースから既存のオブジェクトを削除するために使用します。以下がそのリクエストを実行するコマンドです。
 
 ```bash
 curl -X DELETE https://jsonplaceholder.typicode.com/posts/1
 ```
-The response is an empty JSON object, which means the post has been deleted.
+レスポンスは空のJSONオブジェクトで、これは投稿が削除されたことを意味します。
 
 ```json
 {}
@@ -138,21 +138,21 @@ The response is an empty JSON object, which means the post has been deleted.
 
 ## cURL with Web Unlocker
 
-When using cURL with [Web Unlocker](https://brightdata.com/products/web-unlocker), you can perform HTTP requests in the same way as with standard cURL. However, Web Unlocker enhances your capabilities by providing proxy support, geotargeting, and CAPTCHA solving, powered by some of the most reliable proxies available.
+cURLを[Web Unlocker](https://brightdata.jp/products/web-unlocker)と併用する場合、標準のcURLと同じ方法でHTTPリクエストを実行できます。ただし、Web Unlockerは、プロキシ対応、ジオターゲティング、CAPTCHA解決を提供することで機能を強化し、利用可能な中でも特に信頼性の高いプロキシによって支えられています。
 
-After setting up Web Unlocker, make sure you save your username, zone name, and password for authentication. The example below demonstrates how to configure the connection to use a US-based proxy.
+Web Unlockerをセットアップしたら、認証のためにusername、zone name、passwordを必ず保存してください。以下の例は、USベースのプロキシを使用するように接続を設定する方法を示しています。
 
 ```bash
 curl -i --proxy brd.superproxy.io:33335 --proxy-user brd-customer-<YOUR_USERNAME>-zone-<YOUR_ZONE_NAME>-country-us:<YOUR_PASSWORD> -k "https://geo.brdtest.com/mygeo.json"
 ```
 
-- `-i`: Instructs cURL to include headers in the response, which is helpful for debugging purposes.
+- `-i`: cURLに対し、デバッグ用途に役立つレスポンスのヘッダーを含めるよう指示します。
 - `--proxy brd.superproxy.io:33335 --proxy-user brd-customer-<YOUR_USERNAME>-zone-<YOUR_ZONE_NAME>-country-us:<YOUR_PASSWORD>`
-  - `--proxy brd.superproxy.io:33335`: Specifies a proxy located at the given address to be used. `brd.superproxy.io:33335`.
-  - `--proxy-user brd-customer-<YOUR_USERNAME>-zone-<YOUR_ZONE_NAME>-country-us:<YOUR_PASSWORD>`: This represents our authentication string in the `<username>:<password>` format. With Web Unlocker, your full username includes all of the following: `brd-customer-<YOUR_USERNAME>-zone-<YOUR_ZONE_NAME>-country-us`.
-- `k` tells cURL that we want to bypass SSL certification.
+  - `--proxy brd.superproxy.io:33335`: 指定されたアドレスにあるプロキシ `brd.superproxy.io:33335` を使用するよう指定します。
+  - `--proxy-user brd-customer-<YOUR_USERNAME>-zone-<YOUR_ZONE_NAME>-country-us:<YOUR_PASSWORD>`: `<username>:<password>` 形式の認証文字列を表します。Web Unlockerでは、完全なusernameに次のすべてが含まれます: `brd-customer-<YOUR_USERNAME>-zone-<YOUR_ZONE_NAME>-country-us`。
+- `k` は、SSL証明書の検証をバイパスしたいことをcURLに伝えます。
 
-Here is the example response. Note that our location is showing up in `New Jersey`:
+以下はレスポンス例です。場所が `New Jersey` として表示されていることに注意してください。
 
 ```json
 {"country":"US","asn":{"asnum":20473,"org_name":"AS-VULTR"},"geo":{"city":"Piscataway","region":"NJ","region_name":"New Jersey","postal_code":"08854","latitude":40.5511,"longitude":-74.4606,"tz":"America/New_York","lum_city":"piscataway","lum_region":"nj"}}
@@ -160,12 +160,12 @@ Here is the example response. Note that our location is showing up in `New Jers
 
 ## What Other Options Are There?
 
-Once you’ve gained a good understanding of cURL and HTTP, you can use HTTP in virtually any context. For general API testing, GUI tools like [Postman](https://www.postman.com/) and [Insomnia](https://insomnia.rest/) are excellent options.
+cURLとHTTPを十分に理解できたら、実質的にあらゆる文脈でHTTPを利用できます。一般的なAPIテストには、[Postman](https://www.postman.com/)や[Insomnia](https://insomnia.rest/)のようなGUIツールが優れた選択肢です。
 
-In Python, you can work with libraries like Requests or even integrate cURL directly within your scripts. For JavaScript, tools like Node-Fetch and Axios are available to automate HTTP requests.
+Pythonでは、Requestsのようなライブラリを利用したり、スクリプト内にcURLを直接組み込んだりすることも可能です。JavaScriptでは、Node-FetchやAxiosなどのツールがあり、HTTPリクエストの自動化に利用できます。
 
-If you prefer command-line tools, there are several great options to explore. Tools like [HTTPie](https://httpie.io/) and wget are powerful utilities for handling HTTP requests from the command line.
+コマンドラインツールを好む場合も、検討できる優れた選択肢がいくつかあります。[HTTPie](https://httpie.io/)やwgetのようなツールは、コマンドラインからHTTPリクエストを扱うための強力なユーティリティです。
 
 ## Conclusion
 
-cURL has been the command line standard for decades and it’s not going to change any time soon. However, if you need to bypass advanced bot protections, try [Web Unlocker](https://brightdata.com/products/web-unlocker). It has a simple API you can use with your preferred programming language and includes intelligent proxy management.
+cURLは何十年にもわたりコマンドラインの標準であり、近いうちに変わることはないでしょう。しかし、高度なアンチボット保護を回避する必要がある場合は、[Web Unlocker](https://brightdata.jp/products/web-unlocker)をお試しください。お好みのプログラミング言語で使用できるシンプルなAPIを備え、インテリジェントなプロキシ管理も含まれています。
