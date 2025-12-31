@@ -1,6 +1,6 @@
 # cURLでREST APIコールを行う方法
 
-[![Promo](https://github.com/luminati-io/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.jp/) 
+[![Promo](https://github.com/bright-jp/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.jp/) 
 
 このガイドでは、cURLを使用してGET、POST、PUT、DELETEなどのREST APIリクエストを行う方法と、Web Unlockerプロキシを活用して効率を高める方法を解説します。
 
